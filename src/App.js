@@ -1,22 +1,14 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ProfileImage from './components/ProfileImage';
+import './App.css'; // Make sure this file contains the gradient styles
 
 function App() {
   return (
-    <div className="App">
+    <div className="gradient-background">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <ProfileImage />
+        <h1 className="h1-animated-gradient">Hello, I'm Ishu Singh</h1>
+        {/* ... the rest of your content ... */}
       </header>
     </div>
   );

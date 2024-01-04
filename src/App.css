@@ -2,19 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
 .App-header {
-  background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -28,11 +16,84 @@
   color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Gradient animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
   }
-  to {
-    transform: rotate(360deg);
+  50% {
+    background-position: 100% 50%;
   }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes text-gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.h1-animated-gradient {
+  background: linear-gradient(-45deg, #0f4c75, #1b262c, #0f4c81, #3282b8);
+  background-size: 400% 400%;
+  animation: text-gradient-animation 30s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent; /* Fallback for non-webkit browsers */
+}
+
+/* Gradient background */
+.gradient-background {
+  height: 100vh;
+  background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #fdeff9, #ffecd2);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+/* Profile image container */
+.profile-image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Profile image */
+.profile-image {
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border: 5px solid white;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: black; /* This will set the font color to black */
+}
+
+.social-buttons {
+  position: absolute;
+  top: 20px; /* Adjust as needed */
+  right: 20px; /* Adjust as needed */
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.social-button {
+  color: #333; /* Icon color - choose what contrasts well with your background */
+  text-decoration: none; /* Removes underline from icons */
+}
+
+.social-button:hover {
+  color: #0e76a8; /* LinkedIn color for hover state, or use #333 for GitHub */
 }
