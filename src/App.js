@@ -1,23 +1,36 @@
-import React from 'react';
-import ProfileImage from './components/ProfileImage';
+// App.js
+import React, { useState, useEffect } from 'react';
+import Intro from './components/Intro';
 import SocialButtons from './components/SocialButtons';
-import './App.css'; // Make sure this file contains the gradient styles
+import WorkExperience from './components/WorkExperience';
+import './App.css';
 
 function App() {
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  }, []);
+
   return (
     <div className="App">
-      {/* Fixed container for social buttons */}
       <div className="fixed-container">
         <SocialButtons />
       </div>
-
-      {/* Scrollable content */}
-      <div className="gradient-background scrollable-container">
-        <header className="App-header">
-          <ProfileImage />
-          <h1 className="h1-animated-gradient">Hello, I'm Ishu Singh</h1>
-          {/* ... other components that will be scrolled into view ... */}
-        </header>
+      <div className="gradient-background" />
+      <div className={isScrolled ? 'intro-container hidden' : 'intro-container'}>
+        <Intro />
+      </div>
+      <div className={isScrolled ? 'work-experience-container visible' : 'work-experience-container hidden'}>
+        <WorkExperience />
       </div>
     </div>
   );
