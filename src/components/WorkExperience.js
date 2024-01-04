@@ -11,6 +11,7 @@ const experiences = [
       location: 'Atlanta',
       logo: eyLogo,
       isCurrent: true,
+      description: ""
     },
     {
       company: 'University of South Carolina (UofSC)',
@@ -19,6 +20,7 @@ const experiences = [
       location: 'Columbia',
       logo: uofscLogo,
       isCurrent: false,
+      description: ""
     },
     // ... more experiences
   ];
@@ -34,6 +36,7 @@ const experiences = [
             <p>{experience.role}</p>
             <p>{experience.dates}</p>
             <p>{experience.location}</p>
+            <p>{experience.description}</p>
             {experience.isCurrent && <span className="current-work">Current</span>}
           </div>
         </div>
