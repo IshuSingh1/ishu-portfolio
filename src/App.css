@@ -1,7 +1,45 @@
+/* Global styles */
 .App {
   text-align: center;
 }
 
+/* Fixed gradient background */
+.gradient-background {
+  position: fixed; /* Make the background fixed */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1; /* Place it behind all other content */
+  background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #fdeff9, #ffecd2);
+  background-size: 400% 400%;
+  animation: gradient 30s ease infinite;
+}
+
+/* Fixed container for social buttons */
+.fixed-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1000; /* Ensures it stays above other content */
+}
+
+/* Social buttons */
+.social-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+}
+
+.social-button {
+  color: #333; /* Icon color - choose what contrasts well with your background */
+  text-decoration: none; /* Removes underline from icons */
+}
+
+.social-button:hover {
+  color: #0e76a8; /* LinkedIn color for hover state, or use #333 for GitHub */
+}
+
+/* Content header */
 .App-header {
   min-height: 100vh;
   display: flex;
@@ -9,26 +47,11 @@
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  padding-top: 60px; /* Space for the fixed-position social buttons */
+  box-sizing: border-box; /* Ensure padding is included in height */
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-/* Gradient animation */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
+/* Animated gradient text */
 @keyframes text-gradient-animation {
   0% {
     background-position: 0% 50%;
@@ -43,31 +66,21 @@
 
 .h1-animated-gradient {
   background: linear-gradient(-45deg, #0f4c75, #1b262c, #0f4c81, #3282b8);
-  background-size: 400% 400%;
-  animation: text-gradient-animation 30s ease infinite;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   color: transparent; /* Fallback for non-webkit browsers */
-}
-
-/* Gradient background */
-.gradient-background {
-  height: 100vh;
-  background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #fdeff9, #ffecd2);
+  animation: text-gradient-animation 30s ease infinite;
   background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
 }
 
-/* Profile image container */
+/* Profile image styles */
 .profile-image-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 20px;
 }
 
-/* Profile image */
 .profile-image {
   border-radius: 50%;
   width: 150px;
@@ -77,23 +90,15 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  color: black; /* This will set the font color to black */
-}
-
-.social-buttons {
-  position: absolute;
-  top: 20px; /* Adjust as needed */
-  right: 20px; /* Adjust as needed */
-  display: flex;
-  gap: 10px; /* Space between buttons */
-}
-
-.social-button {
-  color: #333; /* Icon color - choose what contrasts well with your background */
-  text-decoration: none; /* Removes underline from icons */
-}
-
-.social-button:hover {
-  color: #0e76a8; /* LinkedIn color for hover state, or use #333 for GitHub */
+/* Gradient animation for the background */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
