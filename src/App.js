@@ -1,36 +1,20 @@
 // App.js
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Intro from './components/Intro';
 import SocialButtons from './components/SocialButtons';
 import WorkExperience from './components/WorkExperience';
+import EducationHistory from './components/EducationHistory'; // Make sure you have this component
 import './App.css';
 
 function App() {
-  const [isScrolled, setIsScrolled] = useState(false);
-
-  useEffect(() => {
-    const onScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
-
-    window.addEventListener('scroll', onScroll);
-
-    return () => {
-      window.removeEventListener('scroll', onScroll);
-    };
-  }, []);
-
   return (
     <div className="App">
-      <div className="fixed-container">
-        <SocialButtons />
-      </div>
+      <SocialButtons />
       <div className="gradient-background" />
-      <div className={isScrolled ? 'intro-container hidden' : 'intro-container'}>
-        <Intro />
-      </div>
-      <div className={isScrolled ? 'work-experience-container visible' : 'work-experience-container hidden'}>
+      <Intro />
+      <div className="scrollable-content">
         <WorkExperience />
+        <EducationHistory />
       </div>
     </div>
   );
