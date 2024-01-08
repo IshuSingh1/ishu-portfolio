@@ -1,4 +1,19 @@
-/* App.css */
+/* Reset default margin and padding for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+/* Main App styles */
+.App {
+  font-family: 'Arial', sans-serif; /* Use your preferred font */
+  color: #333; /* Default text color */
+  padding-top: 40px; /* Provide space for the fixed-position social buttons */
+  min-height: 100vh; /* Minimum height to fit the viewport */
+}
+
+/* Fixed background with gradient */
 .gradient-background {
   position: fixed;
   top: 0;
@@ -11,6 +26,7 @@
   animation: gradient 30s ease infinite;
 }
 
+/* Styles for animated gradient text */
 .h1-animated-gradient {
   background: linear-gradient(-45deg, #0f4c75, #1b262c, #0f4c81, #3282b8);
   -webkit-background-clip: text;
@@ -24,55 +40,93 @@
   margin: 0; /* Remove default margin */
 }
 
-/* Gradient animation for the background */
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Animated gradient text */
-@keyframes text-gradient-animation {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
-}
-
-/* Global reset for margin and padding */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
-}
-
-/* Global style for the App container */
-.App {
-  font-family: 'Arial', sans-serif; /* Use your preferred font */
-  color: #333; /* Default text color */
-  padding-top: 40px; /* Provide space for the fixed-position social buttons */
-  min-height: 100vh; /* Minimum height to fit the viewport */
-}
-
+/* Scrollable content section */
 .scrollable-content {
-  padding-top: 100vh; /* Same as the viewport height to allow scrolling down from the centered Intro */
+  padding-top: 100vh; /* Offset for full-screen intro section */
 }
 
+/* Introduction container */
 .intro-container {
-  position: fixed; /* Fixed instead of absolute */
+  position: fixed; /* Stay in place during scroll */
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
+}
+
+/* General container for sections including Work Experience and Education History */
+.section-container {
+  width: 80%;
+  max-width: 1024px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Card styles for both Work Experience and Education History */
+.card {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: 100%; /* Ensure consistent width within section-container */
+}
+
+/* Logo styles for Work Experience and Education History */
+.experience-logo, .education-logo {
+  width: 100px;
+  margin-bottom: 15px;
+}
+
+/* Detail styles for Work Experience and Education History */
+.experience-details, .education-details {
+  margin-left: 20px;
+}
+
+/* List styles for courses in Education History */
+.education-details ul {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
+.education-details li {
+  margin-bottom: 5px;
+}
+
+/* Styles for the current job indicator */
+.current-indicator {
+  width: 12px;
+  height: 12px;
+  background-color: #28a745; /* Green color */
+  border-radius: 50%;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  border: 2px solid white; /* To make it stand out over different backgrounds */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .section-container {
+    width: 95%;
+  }
+
+  .card {
+    margin-bottom: 10px; /* Less space between cards on mobile */
+  }
+}
+
+/* Gradient animations */
+@keyframes gradient {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes text-gradient-animation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
