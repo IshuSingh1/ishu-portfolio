@@ -3,8 +3,10 @@ import Intro from './components/Intro';
 import SocialButtons from './components/SocialButtons';
 import WorkExperience from './components/WorkExperience';
 import EducationHistory from './components/EducationHistory';
+import Skills from './components/Skills';
 import Title from './components/Title';
 import './App.css';
+
 
 // The main App component where other components are brought together
 function App() {
@@ -30,6 +32,11 @@ function App() {
         <Title text="Education History" />
         {/* The education history section */}
         <EducationHistory />
+
+        {/* Section title for Skills*/}
+        <Title text="Skills" />
+        {/* The Skillssection */}
+        <Skills />
       </div>
     </div>
   );

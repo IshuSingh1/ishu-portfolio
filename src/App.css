@@ -107,6 +107,89 @@
   border: 2px solid white; /* To make it stand out over different backgrounds */
 }
 
+.skills-container {
+  margin: 20px auto;
+  max-width: 1024px;
+  width: 80%;
+}
+
+.skills-flex-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.skill-card {
+  display: inline-block; /* Change this from 'block' to 'inline-block' */
+  margin-right: 10px; /* Add space between capsules */
+  margin-bottom: 10px; /* Add space between lines of capsules */
+  padding: 10px 20px; /* Adjust padding as necessary */
+  border-radius: 999px; /* Large border-radius to create capsule shape */
+  background: #ffffff; /* White background */
+  cursor: pointer; /* Change cursor to indicate clickable */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: box-shadow 0.2s ease; /* Smooth transition for shadow on hover */
+  /* Add other styles as necessary */
+}
+
+.skill-card.selected,
+.skill-card:hover {
+  background: #f8f8f8; /* Slightly different background for hover/selected */
+  border-color: #cccccc; /* Darker border on hover/selected */
+}
+
+.skill-description {
+  margin-top: 15px;
+  padding: 10px;
+  background: #d9edf7;
+  border-radius: 5px;
+  border: 1px solid #bce8f1;
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  min-width: 300px;
+}
+
+/* This will cover the entire screen and give it a slight opacity */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  align-items: center; /* Align modal card vertically */
+  justify-content: center; /* Align modal card horizontally */
+  z-index: 1000; /* Ensure it's above other content */
+}
+
+/* This will be your actual modal card */
+.modal-card {
+  background: white; /* Solid white background */
+  border-radius: 10px; /* Match border-radius of other components */
+  padding: 20px; /* Provide some padding inside the card */
+  position: relative; /* For absolute positioning of the close button */
+  max-width: 600px; /* Maximum width of the modal, adjust as needed */
+  width: 90%; /* Adjust width as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+}
+
+/* Styles for the close button */
+.modal-close-button {
+  position: absolute;
+  top: 10px; /* Spacing from the top corner of the modal card */
+  right: 10px; /* Spacing from the right corner of the modal card */
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .section-container {
