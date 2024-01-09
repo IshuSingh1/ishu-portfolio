@@ -6,6 +6,7 @@ import EducationHistory from './components/EducationHistory';
 import Skills from './components/Skills';
 import Title from './components/Title';
 import './App.css';
+import Achievements from './components/Achievements';
 
 
 // The main App component where other components are brought together
@@ -35,8 +36,13 @@ function App() {
 
         {/* Section title for Skills*/}
         <Title text="Skills" />
-        {/* The Skillssection */}
+        {/* The Skills section */}
         <Skills />
+
+        {/* Section title for Achievements*/}
+        <Title text="Achievements" />
+        {/* The Achievements section */}
+        <Achievements />
       </div>
     </div>
   );

@@ -54,14 +54,69 @@
   z-index: 10;
 }
 
-/* General container for sections including Work Experience and Education History */
 .section-container {
   width: 80%;
   max-width: 1024px;
-  margin: 20px auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin: 0 auto; /* Center the container */
+  padding-bottom: 20px;
+}
+
+.section-title {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  text-align: left;
+}
+
+.section-entry {
+  background: #ffffff; /* Solid white background */
+  border: 1px solid #eaeaea; /* Light grey border */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  margin-bottom: 20px; /* Space between entries */
+  padding: 20px;
+  position: relative;
+}
+
+.section-logo {
+  width: 100px;
+  margin-right: 20px; /* Space after logo */
+  vertical-align: middle; /* Align logo vertically with text */
+}
+
+.section-text {
+  font-size: 0.9em;
+  line-height: 1.6; /* Adjust line height for readability */
+  color: #333; /* Text color */
+  margin-bottom: 5px; /* Space between text lines */
+}
+
+.section-text ul {
+  list-style-type: disc;
+  margin-left: 40px; /* Indent for list items */
+}
+
+.section-text li {
+  margin-bottom: 5px; /* Space between list items */
+}
+
+.achievements-list {
+  list-style: none;
+  padding: 0;
+}
+
+.achievement-item {
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 15px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.achievement-item strong {
+  display: block;
+  margin-bottom: 10px;
 }
 
 /* Card styles for both Work Experience and Education History */
@@ -72,6 +127,31 @@
   margin-bottom: 20px;
   padding: 20px;
   width: 100%; /* Ensure consistent width within section-container */
+}
+
+.work-experience-card {
+  background: #fff; /* White background for consistency */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  padding: 20px; /* Padding inside the card */
+  margin-bottom: 20px; /* Space between cards */
+  width: 80%; /* Consistent width with other components */
+  max-width: 1024px; /* Maximum width */
+  box-sizing: border-box; /* Include padding and border in width */
+}
+
+.work-experience-logo {
+  width: 100px; /* Logo size */
+  margin-bottom: 20px; /* Space below the logo */
+}
+
+.work-experience-details ul {
+  list-style-type: disc; /* Bullet points for details */
+  margin-left: 20px; /* Indentation for bullet points */
+}
+
+.work-experience-details li {
+  margin-bottom: 10px; /* Space between list items */
 }
 
 /* Logo styles for Work Experience and Education History */
@@ -85,16 +165,33 @@
   margin-left: 20px;
 }
 
-/* List styles for courses in Education History */
-.education-details ul {
-  list-style-type: disc;
-  margin-left: 20px;
+.education-card {
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  border-radius: 10px;
+  padding: 20px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 1024px;
 }
 
-.education-details li {
-  margin-bottom: 5px;
+.education-card h3 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
 }
 
+.education-card p {
+  margin-bottom: 0.5em;
+}
+
+.education-card ul {
+  list-style-type: circle;
+  padding-left: 20px;
+}
+
+.education-card li {
+  margin-bottom: 0.5em;
+}
 /* Styles for the current job indicator */
 .current-indicator {
   width: 12px;
