@@ -21,8 +21,7 @@ const achievementsData = [
         title: "Academic Scholarships and Honors",
         detail: "Recipient of the McNair Junior Fellows Scholarship and consistent presence on the Dean's List, reflecting academic excellence and dedication."
       }
-  // Add more achievements as needed
-];
+  ];
 
 const Achievements = () => {
   return (

@@ -1,4 +1,3 @@
-// SocialButtons.js
 import React from 'react';
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 
@@ -16,7 +15,7 @@ const SocialButtons = () => {
   const githubLink = "https://github.com/IshuSingh1";
 
   const iconStyle = {
-    color: '#000000', // Solid black color
+    color: '#000000',
   };
 
   return (

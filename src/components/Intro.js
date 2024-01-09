@@ -1,6 +1,5 @@
-// Intro.js
 import React from 'react';
-import profilePic from './../images/profileImage.png'; // Update the path if necessary
+import profilePic from './../images/profileImage.png';
 
 const Intro = () => {
   const introStyle = {
@@ -27,7 +26,7 @@ const Intro = () => {
   return (
     <div style={introStyle}>
       <img src={profilePic} alt="Profile" style={profileImageStyle} />
-      <h1>Hello, I'm Ishu Singh</h1> {/* Assuming you want to keep the gradient text styling in App.css */}
+      <h1>Hello, I'm Ishu Singh</h1>
     </div>
   );
 };
