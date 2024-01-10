@@ -4,9 +4,11 @@ import SocialButtons from './components/SocialButtons';
 import WorkExperience from './components/WorkExperience';
 import EducationHistory from './components/EducationHistory';
 import Skills from './components/Skills';
+import Achievements from './components/Achievements';
+import Footer from './components/Footer';
 import Title from './components/Title';
 import './App.css';
-import Achievements from './components/Achievements';
+
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
         <Skills />
         <Title text="Achievements" />
         <Achievements />
+        <Footer />
       </div>
     </div>
   );

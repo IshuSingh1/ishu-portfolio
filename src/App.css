@@ -267,6 +267,21 @@
   cursor: pointer;
 }
 
+.site-footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f8f8; /* A light grey background */
+  color: #333; /* Dark grey text */
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Shadow to lift the footer off the page slightly */
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+.footer-content p {
+  margin: 5px 0; /* Adds a little space between the lines */
+  font-size: 0.9em; /* A slightly smaller font size */
+}
 
 /* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
