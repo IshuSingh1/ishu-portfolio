@@ -86,6 +86,7 @@
   width: 80%;
   max-width: 1024px;
   box-sizing: border-box;
+  position: relative;
 }
 
 .card h3, .education-card h3,

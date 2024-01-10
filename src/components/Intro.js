@@ -26,7 +26,7 @@ const Intro = () => {
   return (
     <div style={introStyle}>
       <img src={profilePic} alt="Profile" style={profileImageStyle} />
-      <h1>Hello, I'm Ishu Singh</h1>
+      <h1>Hello, I'm Ishu</h1>
     </div>
   );
 };

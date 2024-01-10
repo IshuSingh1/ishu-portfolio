@@ -11,6 +11,7 @@ const experiences = [
     logo: eyLogo,
     isCurrent: true,
     description: [
+      "Description:",
       "Developing and maintaining client applications as a ServiceNow Developer.",
       "Gathering client requirements in a role as a ServiceNow Business Analyst.",
       "Writing technical documentation for team knowledge transfer.",
@@ -26,6 +27,7 @@ const experiences = [
     logo: uofscLogo,
     isCurrent: false,
     description: [
+      "Description:",
       "Learned how to build a chatbot on Reddit and Twitter using their official APIs.",
       "Extracted and analyzed COVID-related Reddit data using Python’s Push Shift API.",
       "Stored all the extracted data in MySQL using MySQL-connector-python library.",
