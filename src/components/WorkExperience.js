@@ -41,7 +41,7 @@ const WorkExperience = () => {
   return (
     <div>
       {experiences.map((exp, index) => (
-        <div key={index} className="card" style={{ position: 'relative' }}>
+        <div key={index} className="card">
           <img src={exp.logo} alt={`${exp.company} Logo`} className="experience-logo" />
           <div className="experience-details">
             <h3>{exp.company}</h3>

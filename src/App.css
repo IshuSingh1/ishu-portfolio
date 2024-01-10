@@ -1,19 +1,16 @@
-/* Reset default margin and padding for all elements */
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  box-sizing: border-box;
 }
 
-/* Main App styles */
 .App {
-  font-family: 'Arial', sans-serif; /* Use your preferred font */
-  color: #333; /* Default text color */
-  padding-top: 40px; /* Provide space for the fixed-position social buttons */
-  min-height: 100vh; /* Minimum height to fit the viewport */
+  font-family: 'Arial', sans-serif;
+  color: #333;
+  padding-top: 40px;
+  min-height: 100vh;
 }
 
-/* Fixed background with gradient */
 .gradient-background {
   position: fixed;
   top: 0;
@@ -26,35 +23,31 @@
   animation: gradient 30s ease infinite;
 }
 
-/* Styles for animated gradient text */
 .h1-animated-gradient {
   background: linear-gradient(-45deg, #0f4c75, #1b262c, #0f4c81, #3282b8);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  color: transparent; /* Fallback for non-webkit browsers */
+  color: transparent;
   animation: text-gradient-animation 30s ease infinite;
   background-size: 400% 400%;
-  font-size: 2em; /* Adjust the font size as needed */
+  font-size: 2em;
   text-align: center;
-  margin: 0; /* Remove default margin */
+  margin: 0;
 }
 
-/* Scrollable content section */
 .scrollable-content {
-  padding-top: 100vh; /* Offset for full-screen intro section */
+  padding-top: 100vh;
 }
 
-/* Introduction container */
 .intro-container {
-  position: fixed; /* Stay in place during scroll */
+  position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 10;
 }
 
-/* General container for sections including Work Experience and Education History */
 .section-container {
   width: 80%;
   max-width: 1024px;
@@ -85,7 +78,6 @@
 }
 
 .card, .education-card {
-  /* Apply shared styles to both work experience and education history cards */
   background: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 10px;
@@ -96,87 +88,39 @@
 }
 
 .card h3, .education-card h3 {
-  /* Match the title styles */
   font-size: 1.5em;
   margin-bottom: 0.5em;
 }
 
 .card p, .education-card p,
 .card li, .education-card li {
-  /* Match the text styles */
   margin-bottom: 0.5em;
-  line-height: 1.6; /* Adjust line-height as needed */
+  line-height: 1.6;
 }
 
 .card ul, .education-card ul {
-  /* Match the list styles */
   list-style-type: circle;
   padding-left: 20px;
 }
 
-.work-experience-card {
-  background: #fff; /* White background for consistency */
-  border-radius: 10px; /* Rounded corners */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  padding: 20px; /* Padding inside the card */
-  margin-bottom: 20px; /* Space between cards */
-  width: 80%; /* Consistent width with other components */
-  max-width: 1024px; /* Maximum width */
-  box-sizing: border-box; /* Include padding and border in width */
-}
-
-.work-experience-logo {
-  width: 100px; /* Logo size */
-  margin-bottom: 20px; /* Space below the logo */
-}
-
-.work-experience-details ul {
-  list-style-type: disc; /* Bullet points for details */
-  margin-left: 20px; /* Indentation for bullet points */
-}
-
-.work-experience-details li {
-  margin-bottom: 10px; /* Space between list items */
-}
-
-/* Logo styles for Work Experience and Education History */
-.experience-logo, .education-logo {
+.work-experience-logo, .experience-logo, .education-logo {
   width: 100px;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-/* Detail styles for Work Experience and Education History */
 .experience-details, .education-details {
   margin-left: 20px;
 }
 
-.education-card h3 {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
-.education-card p {
-  margin-bottom: 0.5em;
-}
-
-.education-card ul {
-  list-style-type: circle;
-  padding-left: 20px;
-}
-
-.education-card li {
-  margin-bottom: 0.5em;
-}
-/* Styles for the current job indicator */
 .current-indicator {
   width: 12px;
   height: 12px;
-  background-color: #28a745; /* Green color */
+  background-color: #28a745;
   border-radius: 50%;
   position: absolute;
   top: 10px;
   right: 10px;
-  border: 2px solid white; /* To make it stand out over different backgrounds */
+  border: 2px solid white;
 }
 
 .skills-container {
@@ -185,38 +129,22 @@
   width: 80%;
 }
 
-.skills-flex-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  gap: 10px;
-}
-
 .skill-card {
-  display: inline-block; /* Change this from 'block' to 'inline-block' */
-  margin-right: 10px; /* Add space between capsules */
-  margin-bottom: 10px; /* Add space between lines of capsules */
-  padding: 10px 20px; /* Adjust padding as necessary */
-  border-radius: 999px; /* Large border-radius to create capsule shape */
-  background: #ffffff; /* White background */
-  cursor: pointer; /* Change cursor to indicate clickable */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
-  transition: box-shadow 0.2s ease; /* Smooth transition for shadow on hover */
-  /* Add other styles as necessary */
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: #ffffff;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.2s ease;
 }
 
 .skill-card.selected,
 .skill-card:hover {
-  background: #f8f8f8; /* Slightly different background for hover/selected */
-  border-color: #cccccc; /* Darker border on hover/selected */
-}
-
-.skill-description {
-  margin-top: 15px;
-  padding: 10px;
-  background: #d9edf7;
-  border-radius: 5px;
-  border: 1px solid #bce8f1;
+  background: #f8f8f8;
+  border-color: #cccccc;
 }
 
 .modal-content {
@@ -242,7 +170,6 @@
   font-size: 24px;
 }
 
-/* This will cover the entire screen and give it a slight opacity */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -256,22 +183,20 @@
   z-index: 1000;
 }
 
-/* This will be your actual modal card */
 .modal-card {
-  background: white; /* Solid white background */
-  border-radius: 10px; /* Match border-radius of other components */
-  padding: 20px; /* Provide some padding inside the card */
-  position: relative; /* For absolute positioning of the close button */
-  max-width: 600px; /* Maximum width of the modal, adjust as needed */
-  width: 90%; /* Adjust width as needed */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add some shadow for depth */
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  position: relative;
+  max-width: 600px;
+  width: 90%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Styles for the close button */
 .modal-close-button {
   position: absolute;
-  top: 10px; /* Spacing from the top corner of the modal card */
-  right: 10px; /* Spacing from the right corner of the modal card */
+  top: 10px;
+  right: 10px;
   background: transparent;
   border: none;
   cursor: pointer;
@@ -280,31 +205,29 @@
 .site-footer {
   text-align: center;
   padding: 20px;
-  background-color: #f8f8f8; /* A light grey background */
-  color: #333; /* Dark grey text */
-  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Shadow to lift the footer off the page slightly */
+  background-color: #f8f8f8;
+  color: #333;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
   position: relative;
   bottom: 0;
   width: 100%;
 }
 
 .footer-content p {
-  margin: 5px 0; /* Adds a little space between the lines */
-  font-size: 0.9em; /* A slightly smaller font size */
+  margin: 5px 0;
+  font-size: 0.9em;
 }
 
-/* Responsive adjustments for smaller screens */
 @media (max-width: 768px) {
   .section-container {
     width: 95%;
   }
 
   .card {
-    margin-bottom: 10px; /* Less space between cards on mobile */
+    margin-bottom: 10px;
   }
 }
 
-/* Gradient animations */
 @keyframes gradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
