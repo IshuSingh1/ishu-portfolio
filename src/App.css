@@ -85,13 +85,10 @@
   margin: 20px auto;
   width: 80%;
   max-width: 1024px;
+  box-sizing: border-box;
 }
 
-.card h3, .education-card h3 {
-  font-size: 1.5em;
-  margin-bottom: 0.5em;
-}
-
+.card h3, .education-card h3,
 .card p, .education-card p,
 .card li, .education-card li {
   margin-bottom: 0.5em;
@@ -103,13 +100,17 @@
   padding-left: 20px;
 }
 
-.work-experience-logo, .experience-logo, .education-logo {
+.experience-logo, .education-logo {
   width: 100px;
   margin-bottom: 20px;
 }
 
 .experience-details, .education-details {
   margin-left: 20px;
+}
+
+.education-text-content {
+  padding-left: 20px; /* This adds an indent to the text content */
 }
 
 .current-indicator {

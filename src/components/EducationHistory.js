@@ -22,17 +22,19 @@ const EducationHistory = () => {
   return (
     <div className="education-card">
       <img src={uofscLogo} alt="University of South Carolina Logo" className="education-logo" />
-      <h3>{education.school}</h3>
-      <p>{education.degree}</p>
-      <p>{education.dates}</p>
-      <p>Major GPA: {education.majorGPA}</p>
-      <p>Overall GPA: {education.overallGPA}</p>
-      <p>Important Coursework:</p>
-      <ul>
-        {education.courses.map((course, index) => (
-          <li key={index}>{course}</li>
-        ))}
-      </ul>
+      <div className="education-text-content">
+        <h3>{education.school}</h3>
+        <p>{education.degree}</p>
+        <p>{education.dates}</p>
+        <p>Major GPA: {education.majorGPA}</p>
+        <p>Overall GPA: {education.overallGPA}</p>
+        <p>Important Coursework:</p>
+        <ul>
+          {education.courses.map((course, index) => (
+            <li key={index}>{course}</li>
+          ))}
+        </ul>
+      </div>
     </div>
   );
 };
