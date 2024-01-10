@@ -84,14 +84,34 @@
   margin-bottom: 10px;
 }
 
-/* Card styles for both Work Experience and Education History */
-.card {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.card, .education-card {
+  /* Apply shared styles to both work experience and education history cards */
+  background: #fff;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 10px;
-  margin-bottom: 20px;
   padding: 20px;
-  width: 100%; /* Ensure consistent width within section-container */
+  margin: 20px auto;
+  width: 80%;
+  max-width: 1024px;
+}
+
+.card h3, .education-card h3 {
+  /* Match the title styles */
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.card p, .education-card p,
+.card li, .education-card li {
+  /* Match the text styles */
+  margin-bottom: 0.5em;
+  line-height: 1.6; /* Adjust line-height as needed */
+}
+
+.card ul, .education-card ul {
+  /* Match the list styles */
+  list-style-type: circle;
+  padding-left: 20px;
 }
 
 .work-experience-card {
@@ -128,16 +148,6 @@
 /* Detail styles for Work Experience and Education History */
 .experience-details, .education-details {
   margin-left: 20px;
-}
-
-.education-card {
-  background: #fff;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  border-radius: 10px;
-  padding: 20px;
-  margin: 20px auto;
-  width: 80%;
-  max-width: 1024px;
 }
 
 .education-card h3 {
