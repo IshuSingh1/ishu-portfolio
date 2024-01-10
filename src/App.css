@@ -77,7 +77,7 @@
   margin-bottom: 10px;
 }
 
-.card, .education-card {
+.card, .education-card, .about-me {
   background: #fff;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
   border-radius: 10px;
@@ -91,7 +91,7 @@
 
 .card h3, .education-card h3,
 .card p, .education-card p,
-.card li, .education-card li {
+.card li, .education-card li, .about-me {
   margin-bottom: 0.5em;
   line-height: 1.6;
 }

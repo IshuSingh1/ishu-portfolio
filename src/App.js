@@ -8,6 +8,7 @@ import Achievements from './components/Achievements';
 import Footer from './components/Footer';
 import Title from './components/Title';
 import './App.css';
+import AboutMe from './components/AboutMe';
 
 
 function App() {
@@ -17,6 +18,8 @@ function App() {
       <div className="gradient-background" />
       <Intro />
       <div className="scrollable-content">
+        <Title text="About Me" />
+        <AboutMe />
         <Title text="Work Experience" />
         <WorkExperience />
         <Title text="Education History" />
