@@ -74,6 +74,38 @@ const skillsData = [
 ];
 
 const SkillModal = ({ skill, description, onClose }) => {
+  const modalOverlayStyle = {
+    position: 'fixed',
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    background: 'rgba(0, 0, 0, 0.5)',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+    zIndex: 1000,
+  };
+
+  const modalContentStyle = {
+    position: 'relative',
+    background: '#fff',
+    padding: '20px',
+    borderRadius: '10px',
+    width: '90%',
+    maxWidth: '500px',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+  };
+
+  const closeButtonStyle = {
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+    border: 'none',
+    background: 'none',
+    cursor: 'pointer',
+  };
+
   const handleOverlayClick = (e) => {
     if (e.target.id === "modal-overlay") {
       onClose();
@@ -81,10 +113,10 @@ const SkillModal = ({ skill, description, onClose }) => {
   };
 
   return (
-    <div id="modal-overlay" className="modal-overlay" onClick={handleOverlayClick}>
-      <div className="modal-content">
-        <button className="close-button" onClick={onClose}>
-          <FaTimes className="close-icon" />
+    <div id="modal-overlay" style={modalOverlayStyle} onClick={handleOverlayClick}>
+      <div style={modalContentStyle}>
+        <button style={closeButtonStyle} onClick={onClose}>
+          <FaTimes />
         </button>
         <h2>{skill}</h2>
         <p>{description}</p>
@@ -96,6 +128,24 @@ const SkillModal = ({ skill, description, onClose }) => {
 const Skills = () => {
   const [selectedSkill, setSelectedSkill] = useState(null);
 
+  const skillsContainerStyle = {
+    margin: '20px auto',
+    maxWidth: '1024px',
+    width: '80%',
+  };
+
+  const skillCardStyle = {
+    display: 'inline-block',
+    marginRight: '10px',
+    marginBottom: '10px',
+    padding: '10px 20px',
+    borderRadius: '999px',
+    background: '#ffffff',
+    cursor: 'pointer',
+    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+    transition: 'box-shadow 0.2s ease',
+  };
+
   const handleSkillClick = (skillItem) => {
     setSelectedSkill(skillItem);
   };
@@ -105,9 +155,9 @@ const Skills = () => {
   };
 
   return (
-    <div className="skills-container">
+    <div style={skillsContainerStyle}>
       {skillsData.map(skillItem => (
-        <div key={skillItem.skill} className="skill-card" onClick={() => handleSkillClick(skillItem)}>
+        <div key={skillItem.skill} style={skillCardStyle} onClick={() => handleSkillClick(skillItem)}>
           {skillItem.skill}
         </div>
       ))}

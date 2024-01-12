@@ -1,5 +1,32 @@
 import React from 'react';
-import uofscLogo from './../images/uofsc.png'; // Make sure the path to the image is correct
+import uofscLogo from './../images/uofsc.png';
+
+const educationCardStyle = {
+  background: '#fff',
+  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+  borderRadius: '10px',
+  padding: '20px',
+  margin: '20px auto',
+  width: '80%',
+  maxWidth: '1024px',
+  boxSizing: 'border-box',
+  position: 'relative',
+};
+
+const educationLogoStyle = {
+  width: '100px',
+  marginBottom: '20px',
+};
+
+const educationTextStyle = {
+  paddingLeft: '20px',
+};
+
+const listStyle = {
+  paddingLeft: '40px',
+};
+
+
 
 const EducationHistory = () => {
   const education = {
@@ -19,17 +46,17 @@ const EducationHistory = () => {
     ],
   };
 
-  return (
-    <div className="education-card">
-      <img src={uofscLogo} alt="University of South Carolina Logo" className="education-logo" />
-      <div className="education-text-content">
+    return (
+    <div style={educationCardStyle}>
+      <img src={uofscLogo} alt="University of South Carolina Logo" style={educationLogoStyle} />
+      <div style={educationTextStyle}>
         <h3>{education.school}</h3>
         <p>{education.degree}</p>
         <p>{education.dates}</p>
         <p>Major GPA: {education.majorGPA}</p>
         <p>Overall GPA: {education.overallGPA}</p>
         <p>Important Coursework:</p>
-        <ul>
+        <ul style={listStyle}>
           {education.courses.map((course, index) => (
             <li key={index}>{course}</li>
           ))}

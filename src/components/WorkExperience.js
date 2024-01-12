@@ -40,12 +40,48 @@ const experiences = [
 ];
 
 const WorkExperience = () => {
+  const cardStyle = {
+    background: '#fff',
+    boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
+    borderRadius: '10px',
+    padding: '20px',
+    margin: '20px auto',
+    width: '80%',
+    maxWidth: '1024px',
+    boxSizing: 'border-box',
+    position: 'relative',
+  };
+
+  const experienceLogoStyle = {
+    width: '100px',
+    marginBottom: '20px',
+  };
+
+  const experienceDetailsStyle = {
+    marginLeft: '20px',
+  };
+
+  const listStyle = {
+    paddingLeft: '40px', // Increase left padding to indent the list items further
+  };
+
+  const currentIndicatorStyle = {
+    width: '12px',
+    height: '12px',
+    backgroundColor: '#28a745',
+    borderRadius: '50%',
+    position: 'absolute',
+    top: '10px',
+    right: '10px',
+    border: '2px solid white',
+  };
+
   return (
     <div>
       {experiences.map((exp, index) => (
-        <div key={index} className="card">
-          <img src={exp.logo} alt={`${exp.company} Logo`} className="experience-logo" />
-          <div className="experience-details">
+        <div key={index} style={cardStyle}>
+          <img src={exp.logo} alt={`${exp.company} Logo`} style={experienceLogoStyle} />
+          <div style={experienceDetailsStyle}>
             <h3>{exp.company}</h3>
             <p>{exp.role}</p>
             <p>{exp.dates}</p>
@@ -53,12 +89,12 @@ const WorkExperience = () => {
             {exp.description.slice(0, 1).map((detail, detailIndex) => (
               <p key={detailIndex}>{detail}</p>
             ))}
-            <ul>
+            <ul style={listStyle}>
               {exp.description.slice(1).map((detail, detailIndex) => (
                 <li key={detailIndex}>{detail}</li>
               ))}
             </ul>
-            {exp.isCurrent && <div className="current-indicator"></div>}
+            {exp.isCurrent && <div style={currentIndicatorStyle}></div>}
           </div>
         </div>
       ))}
