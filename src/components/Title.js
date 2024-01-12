@@ -8,7 +8,6 @@ const Title = ({ text }) => {
     color: '#333',
     padding: '20px 0',
     margin: '40px 0 20px',
-    borderBottom: '2px solid #eaeaea',
     width: '80%',
     maxWidth: '1024px',
     boxSizing: 'border-box',
@@ -17,7 +16,7 @@ const Title = ({ text }) => {
     marginRight: 'auto',
   };
 
-  return <h2 style={titleStyle}>{text}</h2>;
+  return <h2 className="animated-title" style={titleStyle}>{text}</h2>;
 };
 
 export default Title;

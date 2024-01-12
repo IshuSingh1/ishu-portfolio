@@ -7,16 +7,15 @@ const experiences = [
     company: 'Ernst & Young (EY)',
     role: 'Technology Consultant',
     dates: 'AUG 2022 - PRESENT',
-    location: 'Atlanta',
+    location: 'Atlanta, GA',
     logo: eyLogo,
     isCurrent: true,
     description: [
-      "Description:",
-      "Developing and maintaining client applications as a ServiceNow Developer.",
-      "Gathering client requirements in a role as a ServiceNow Business Analyst.",
-      "Writing technical documentation for team knowledge transfer.",
-      "Contributing to business development initiatives within EY.",
-      "Lead the development of a custom Firewall Management application, enhancing service delivery and user experience."
+      "Work & Responsibilities includes:",
+      "Actively involved in the development, configuration, and ongoing maintenance of client applications as a ServiceNow Developer, ensuring optimal performance and user satisfaction.",
+      "Acting as a ServiceNow Functional Analyst, gathering client requirements, documenting integrations, catalog items, and configurations, thereby enhancing project efficiency and clarity.",
+      "Led the development of a custom Firewall Management application in ServiceNow, significantly enhancing service delivery and user experience. This involved creating scoped applications, access controls, workflows, email notifications, forms, and micro-configurations. Received high praise and recognition for exceptional work, with users providing overwhelmingly positive feedback on the application.",
+      "Playing a pivotal role in EY's business development initiatives, including maintaining the account pipeline and reporting crucial metrics to leadership, as well as providing key support in multiple client pursuits.",
     ]
   },
   {
@@ -27,14 +26,11 @@ const experiences = [
     logo: uofscLogo,
     isCurrent: false,
     description: [
-      "Description:",
-      "Learned how to build a chatbot on Reddit and Twitter using their official APIs.",
-      "Extracted and analyzed COVID-related Reddit data using Python’s Push Shift API.",
-      "Stored all the extracted data in MySQL using MySQL-connector-python library.",
-      "Visualized data analysis using various Python libraries.",
-      "Created Python scripts to automate tasks such as extracting and analyzing social media data.",
-      "Developed a 3D model of Rubik's Cube with an integrated RASA chatbot that helps users learn Rubik’s Cube.",
-      "Enhanced an already built Android app called QuitStart by adding a navigation chatbot inside it."
+      "Work performed includes:",
+      "Data Analysis and Visualization: Analyzed COVID and SUD Reddit/Twitter data (2019-2021) using Python, visualizing trends with Python libraries, and optimized API data extraction.",
+      "3D Modeling and Chatbot Integration: Created an interactive 3D Rubik's Cube using Three.js and integrated a RASA chatbot in a web app for cube-solving education.",
+      "Mobile Application Enhancement: Enhanced QuitStart Android app with an embedded chatbot and utilized Firebase for user data management.",
+      "Web-Based React Project: Contributed to the development of a React project aimed at studying user focus in response to various ads and popups, providing valuable insights into the effects of digital advertising.",
     ]
   },
 ];

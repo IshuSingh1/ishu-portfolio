@@ -34,12 +34,12 @@ const EducationHistory = () => {
     majorGPA: "3.68",
     overallGPA: "3.3",
     courses: [
-      "Data Structures and Algorithms",
-      "Software Engineering",
-      "Advanced Programming Techniques",
-      "Capstone Project",
-      "Database System Design",
-      "Game Design",
+      "Data Structures and Algorithms: Covered practical data organization methods and algorithm efficiency, including lists, trees, and graph structures.", 
+      "Software Engineering: Studied the core principles of software design and development, focusing on object-oriented and functional design strategies, along with version control and testing.",
+      "Advanced Programming Techniques: Advanced my understanding of programming concepts like pointers, memory management, and language-specific features in the Unix environment.",
+      "Capstone Project: Participated in a significant team project that involved designing, building, and validating a complete computer system, with a focus on practical implementation and testing.",
+      "Database System Design: Learned about database management system architecture, with an emphasis on design, security, and implementation principles.",
+      "Game Design: Explored the process of designing and developing computer games, with a practical emphasis on the technologies involved.",
       // Add more courses as needed
     ],
   };
