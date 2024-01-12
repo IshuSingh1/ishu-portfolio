@@ -18,13 +18,13 @@
   width: 100%;
   height: 100%;
   z-index: -1;
-  background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #fdeff9, #ffecd2);
+  background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #fdeff9, #ffecd2, #fbc2eb, #a6c1ee);
   background-size: 400% 400%;
   animation: gradient 30s ease infinite;
 }
 
 .h1-animated-gradient {
-  background: linear-gradient(-45deg, #0f4c75, #1b262c, #0f4c81, #3282b8);
+  background: linear-gradient(-45deg, #0f4c75, #1b262c, #0f4c81, #3282b8, #56ccf2, #2f80ed);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -50,6 +50,18 @@
 
 body {
   line-height: 1.75; /* This doubles the default line height */
+}
+
+@keyframes gradientAnimation {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animated-gradient {
+  background: linear-gradient(-45deg, #f78e9a, #bfe9ff, #8de4ff, #e78ca9, #fbc2eb, #a6c1ee);
+  background-size: 400% 400%;
+  animation: gradientAnimation 30s ease infinite;
 }
 
 @media (max-width: 768px) {

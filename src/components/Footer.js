@@ -18,7 +18,7 @@ const Footer = () => {
   const year = new Date().getFullYear(); // Gets the current year
 
   return (
-    <footer style={siteFooterStyle}>
+    <footer className="animated-gradient" style={siteFooterStyle}>
       <div style={footerContentStyle}>
         <p>© {year} Prathamjeet(Ishu) Singh. All rights reserved.</p>
         <p>Email: prathamjeet24@gmail.com</p>
