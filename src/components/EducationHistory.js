@@ -26,8 +26,6 @@ const listStyle = {
   paddingLeft: '40px',
 };
 
-
-
 const EducationHistory = () => {
   const education = {
     school: "University of South Carolina, Columbia",
