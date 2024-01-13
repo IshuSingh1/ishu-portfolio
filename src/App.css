@@ -52,6 +52,17 @@ body {
   line-height: 1.75; /* This doubles the default line height */
 }
 
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
 @keyframes movingGradient {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
