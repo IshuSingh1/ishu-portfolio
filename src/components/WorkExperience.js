@@ -22,11 +22,11 @@ const experiences = [
     company: 'University of South Carolina (UofSC)',
     role: 'Developer / Research Assistant',
     dates: 'MAY 2021 - AUG 2022',
-    location: 'Columbia',
+    location: 'Columbia, SC',
     logo: uofscLogo,
     isCurrent: false,
     description: [
-      "Work performed includes:",
+      "Work performed included:",
       "Data Analysis and Visualization: Analyzed COVID and SUD Reddit/Twitter data (2019-2021) using Python, visualizing trends with Python libraries, and optimized API data extraction.",
       "3D Modeling and Chatbot Integration: Created an interactive 3D Rubik's Cube using Three.js and integrated a RASA chatbot in a web app for cube-solving education.",
       "Mobile Application Enhancement: Enhanced QuitStart Android app with an embedded chatbot and utilized Firebase for user data management.",

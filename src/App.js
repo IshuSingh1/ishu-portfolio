@@ -9,12 +9,14 @@ import Footer from './components/Footer';
 import Title from './components/Title';
 import './App.css';
 import AboutMe from './components/AboutMe';
+import HamburgerMenu from './components/HamburgerMenu';
 
 
 function App() {
   return (
     <div className="App">
       <SocialButtons />
+      <HamburgerMenu />
       <div className="gradient-background" />
       <Intro />
       <div className="scrollable-content">
