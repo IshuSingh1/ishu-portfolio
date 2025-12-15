@@ -1,64 +1,63 @@
 import React from 'react';
 import uofscLogo from './../images/uofsc.png';
 
-const educationCardStyle = {
-  background: '#fff',
-  boxShadow: '0 4px 8px rgba(0,0,0,0.1)',
-  borderRadius: '10px',
-  padding: '20px',
-  margin: '20px auto',
-  width: '80%',
-  maxWidth: '1024px',
-  boxSizing: 'border-box',
-  position: 'relative',
-};
-
-const educationLogoStyle = {
-  width: '100px',
-  marginBottom: '20px',
-};
-
-const educationTextStyle = {
-  paddingLeft: '20px',
-};
-
-const listStyle = {
-  paddingLeft: '40px',
-};
-
 const EducationHistory = () => {
   const education = {
-    school: "University of South Carolina, Columbia",
-    degree: "Bachelor's degree in Computer Science",
+    school: "University of South Carolina",
+    degree: "Bachelor's Degree in Computer Science",
     dates: "AUG 2018 - MAY 2022",
+    location: "Columbia, SC",
     majorGPA: "3.68",
     overallGPA: "3.3",
+    honors: "McNair Junior Fellows Scholar",
     courses: [
-      "Data Structures and Algorithms: Covered practical data organization methods and algorithm efficiency, including lists, trees, and graph structures.", 
-      "Software Engineering: Studied the core principles of software design and development, focusing on object-oriented and functional design strategies, along with version control and testing.",
-      "Advanced Programming Techniques: Advanced my understanding of programming concepts like pointers, memory management, and language-specific features in the Unix environment.",
-      "Capstone Project: Participated in a significant team project that involved designing, building, and validating a complete computer system, with a focus on practical implementation and testing.",
-      "Database System Design: Learned about database management system architecture, with an emphasis on design, security, and implementation principles.",
-      "Game Design: Explored the process of designing and developing computer games, with a practical emphasis on the technologies involved.",
-      // Add more courses as needed
+      "Data Structures and Algorithms", 
+      "Software Engineering & Design",
+      "Advanced Programming Techniques (Unix)",
+      "Database System Design",
+      "Game Design & Development",
+      "Capstone Project: System Implementation"
     ],
   };
 
-    return (
-    <div style={educationCardStyle}>
-      <img src={uofscLogo} alt="University of South Carolina Logo" style={educationLogoStyle} />
-      <div style={educationTextStyle}>
-        <h3>{education.school}</h3>
-        <p>{education.degree}</p>
-        <p>{education.dates}</p>
-        <p>Major GPA: {education.majorGPA}</p>
-        <p>Overall GPA: {education.overallGPA}</p>
-        <p>Important Coursework:</p>
-        <ul style={listStyle}>
+  return (
+    // Added margin: 0 auto to force centering
+    <div className="glass-card" style={{ maxWidth: '900px', margin: '0 auto' }}>
+      <div className="job-header">
+        <img src={uofscLogo} alt="UofSC Logo" className="job-logo" />
+        <div className="job-info">
+          <h3>{education.school}</h3>
+          <span className="job-role">{education.degree}</span>
+          <div className="job-meta">
+            {education.dates} | {education.location}
+          </div>
+        </div>
+      </div>
+
+      <div className="job-details">
+        <p style={{ marginBottom: '1rem', color: '#334155' }}>
+          <strong>Honors:</strong> {education.honors} <br/>
+          <strong>GPA:</strong> Major {education.majorGPA} / Overall {education.overallGPA}
+        </p>
+        
+        <h4 style={{ marginBottom: '0.5rem', color: 'var(--accent-color)' }}>Key Coursework:</h4>
+        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
           {education.courses.map((course, index) => (
-            <li key={index}>{course}</li>
+            <span 
+              key={index} 
+              style={{
+                background: 'rgba(255,255,255,0.5)',
+                border: '1px solid rgba(0,0,0,0.1)',
+                padding: '5px 15px',
+                borderRadius: '4px',
+                fontSize: '0.9rem',
+                color: '#475569'
+              }}
+            >
+              {course}
+            </span>
           ))}
-        </ul>
+        </div>
       </div>
     </div>
   );
