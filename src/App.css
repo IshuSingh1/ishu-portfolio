@@ -1,137 +1,176 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* --- New Hero/Intro Section Styles --- */
 
-.App {
-  font-family: 'Arial', sans-serif;
-  color: #333;
-  padding-top: 40px;
-  min-height: 100vh;
-}
-
-.gradient-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  background: linear-gradient(-45deg, #a1c4fd, #c2e9fb, #fdeff9, #ffecd2, #fbc2eb, #a6c1ee);
-  background-size: 400% 400%;
-  animation: gradient 30s ease infinite;
-}
-
-.h1-animated-gradient {
-  background: linear-gradient(-45deg, #0f4c75, #1b262c, #0f4c81, #3282b8, #56ccf2, #2f80ed);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-  color: transparent;
-  animation: text-gradient-animation 30s ease infinite;
-  background-size: 400% 400%;
-  font-size: 2em;
-  text-align: center;
-  margin: 0;
-}
-
-.scrollable-content {
-  padding-top: 100vh;
-}
-
+/* 1. Split Layout Container */
 .intro-container {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 85vh; /* Takes up most of the screen */
+  padding: 0 10%; /* Adds breathing room on sides */
+  position: relative;
+  overflow: hidden;
 }
 
-body {
-  line-height: 1.75; /* This doubles the default line height */
+/* 2. Typography & Text Area */
+.intro-text {
+  flex: 1;
+  z-index: 2;
+  text-align: left; /* Aligns text to left, not center */
 }
 
-/* Hide scrollbar for Chrome, Safari and Opera */
-body::-webkit-scrollbar {
-  display: none;
+.greeting {
+  font-size: 1.5rem;
+  color: var(--accent-color); /* Uses your sky blue */
+  margin-bottom: 0.5rem;
+  font-weight: 600;
 }
 
-/* Hide scrollbar for IE, Edge and Firefox */
-body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
+.name-title {
+  font-size: 4rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+  line-height: 1.1;
+  color: #ffffff; /* Solid White instead of gradient */
+  text-shadow: 0 4px 10px rgba(0,0,0,0.5); /* distinct shadow to pop against any background */
 }
 
-@keyframes movingGradient {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.role-title {
+  font-size: 1.5rem;
+  color: #cbd5e1;
+  font-family: monospace; /* Code-like font for the role */
+  min-height: 1.5em; /* Prevents layout jump while typing */
 }
 
-.animated-title {
+.intro-subtitle {
+  margin-top: 1.5rem;
+  font-size: 1.1rem;
+  color: #94a3b8;
+  max-width: 500px;
+  line-height: 1.8;
+}
+
+/* 3. Buttons */
+.intro-buttons {
+  margin-top: 2.5rem;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.primary-btn {
+  padding: 12px 30px;
+  background-color: var(--accent-color);
+  color: #0f172a;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: transform 0.2s;
+}
+
+.secondary-btn {
+  padding: 12px 30px;
+  border: 1px solid var(--accent-color);
+  color: var(--accent-color);
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.primary-btn:hover, .secondary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px -10px rgba(56, 189, 248, 0.5);
+}
+
+/* 4. Image Area & Blob Background */
+.intro-image-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
 }
 
-.animated-title:after {
-  content: '';
+.profile-img {
+  width: 350px; /* Larger image */
+  height: 350px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 4px solid rgba(255, 255, 255, 0.1);
+  z-index: 2;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+}
+
+/* The "Blob" adds visual weight behind the image */
+.blob-background {
   position: absolute;
-  bottom: -10px; /* Adjust as necessary */
-  left: 0;
-  width: 100%;
-  height: 3px;
-  background: linear-gradient(-45deg, #ff6e7f, #bfe9ff, #8de4ff, #ff75a0, #fbc2eb, #a6c1ee);
-  background-size: 200% 200%;
-  animation: movingGradient 10s ease infinite;
-  clip-path: polygon(0 0, 100% 0, 50% 100%, 0% 100%);
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(56, 189, 248, 0.2) 0%, rgba(15, 23, 42, 0) 70%);
+  border-radius: 50%;
+  z-index: 1;
+  animation: pulse-glow 4s infinite alternate;
 }
 
-@keyframes gradientAnimation {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+@keyframes pulse-glow {
+  0% { transform: scale(0.9); opacity: 0.5; }
+  100% { transform: scale(1.1); opacity: 0.8; }
 }
 
-.animated-gradient {
-  background: linear-gradient(-45deg, #f78e9a, #bfe9ff, #8de4ff, #e78ca9, #fbc2eb, #a6c1ee);
-  background-size: 400% 400%;
-  animation: gradientAnimation 30s ease infinite;
+/* 5. Scroll Indicator */
+.scroll-indicator {
+  position: absolute;
+  bottom: 40px;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: #64748b;
+  font-size: 0.9rem;
+  animation: bounce 2s infinite;
 }
 
-@media (max-width: 768px) {
-  .section-container {
-    width: 95%;
-  }
-
-  .card {
-    margin-bottom: 10px;
-  }
+.scroll-indicator .arrow {
+  font-size: 1.5rem;
+  margin-top: 5px;
 }
 
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {transform: translateY(0) translateX(-50%);}
+  40% {transform: translateY(-10px) translateX(-50%);}
+  60% {transform: translateY(-5px) translateX(-50%);}
 }
 
-@keyframes text-gradient-animation {
-  0% {
-    background-position: 0% 50%;
+/* Typewriter Cursor Blink */
+.cursor {
+  animation: blink 1s step-end infinite;
+}
+@keyframes blink { 50% { opacity: 0; } }
+
+/* Mobile Responsiveness */
+@media (max-width: 900px) {
+  .intro-container {
+    flex-direction: column-reverse; /* Text below image on mobile */
+    justify-content: center;
+    text-align: center;
+    padding-top: 40px;
   }
 
-  50% {
-    background-position: 100% 50%;
+  .intro-text {
+    text-align: center;
+    margin-top: 2rem;
   }
 
-  100% {
-    background-position: 0% 50%;
+  .intro-buttons {
+    justify-content: center;
+  }
+  
+  .profile-img {
+    width: 250px;
+    height: 250px;
+  }
+  
+  .blob-background {
+    width: 300px;
+    height: 300px;
   }
 }
