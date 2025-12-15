@@ -16,13 +16,16 @@ const AboutMe = () => {
   return (
     <div style={aboutMeStyle}>
       <p>
-        Hi, I'm Ishu Singh — a passionate Technology Consultant at Ernst & Young and
-        Computer Science graduate from the University of South Carolina. I specialize
-        in creating intuitive software and automating complex tasks, with a knack for
-        Python scripting and ServiceNow development. My academic and professional
-        paths are decorated with achievements and skills in data analysis, application
-        development, and collaborative project leadership. I'm all about making
-        impactful tech easier to use and understand.
+        Detail-oriented and motivated ServiceNow Developer with over 3 years of experience 
+        designing and implementing enterprise-level ServiceNow solutions. I am currently 
+        a ServiceNow Consultant / Developer at PricewaterhouseCoopers (PwC).
+      </p>
+      <p style={{ marginTop: '10px' }}>
+        I specialize in JavaScript, custom app development, and full SDLC execution, 
+        with strong exposure to ITSM, ITAM, and Federal client environments. My background 
+        includes a proven track record of enhancing workflows, optimizing systems, and 
+        delivering quality technical solutions. I am ready to contribute to fast-paced, 
+        mission-critical engagements with flexibility to travel as required.
       </p>
     </div>
   );

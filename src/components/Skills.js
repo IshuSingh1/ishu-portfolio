@@ -3,74 +3,61 @@ import { FaTimes } from 'react-icons/fa';
 
 const skillsData = [
   {
-    skill: "React",
-    description: "Developed dynamic user interfaces for web applications using React's component-based architecture, enhancing user experience and interactivity."
+    skill: "ServiceNow ITSM & ITAM",
+    description: "Expertise in Incident, Change, Problem, Major Incident, Knowledge Management, HAM Pro, and SAM Pro."
   },
   {
-    skill: "Python",
-    description: "Utilized Python for automation, data extraction, analysis, and visualization, leveraging libraries like Pandas and Matplotlib to process and interpret complex datasets."
+    skill: "ServiceNow Configuration",
+    description: "Proficient in Business Rules, UI Policies, UI Actions, Client Scripts, Workflows, UI Pages, and Data Imports."
   },
   {
     skill: "JavaScript",
-    description: "Experienced with JavaScript to create interactive web features and client-side logic for various projects, including a web-based Rubik's cube emulator."
+    description: "Core language for ServiceNow customization and full-stack web development."
+  },
+  {
+    skill: "CMDB & Discovery",
+    description: "Experience managing Configuration Management Databases and running Discovery for asset tracking."
+  },
+  {
+    skill: "REST APIs",
+    description: "Designing and implementing integrations to support complex business processes and third-party data exchange."
+  },
+  {
+    skill: "Python",
+    description: "Used for data analysis, scripting, automation, and backend logic."
   },
   {
     skill: "Java",
-    description: "Implemented a console-based movie booking system using Java, demonstrating strong understanding of object-oriented programming and backend development."
+    description: "Strong understanding of Object-Oriented Programming (OOP) and backend development."
   },
   {
     skill: "SQL",
-    description: "Managed and manipulated data in MySQL databases, ensuring efficient data storage and retrieval for data analysis tasks and application backends."
+    description: "Database management, querying, and data manipulation."
   },
   {
-    skill: "Data Analysis",
-    description: "Conducted comprehensive data analysis, transforming raw data into actionable insights, particularly in research and social media contexts."
-  },
-  {
-    skill: "Technical Writing",
-    description: "Prepared detailed technical documentation to facilitate knowledge transfer and support ongoing development processes."
-  },
-  {
-    skill: "ServiceNow Development",
-    description: "Developed and maintained client applications as a ServiceNow Developer, focusing on creating customized solutions and enhancing user experience."
-  },
-  {
-    skill: "API Integration",
-    description: "Leveraged official APIs for platforms like Reddit and Twitter to build chatbots and extract data, showcasing proficiency in integrating third-party services."
-  },
-  {
-    skill: "Kotlin",
-    description: "Utilized Kotlin to contribute to the development of an Android art application, showcasing skills in modern Android development."
-  },
-  {
-    skill: "Unity",
-    description: "Collaborated on a 2.5D Unity game project, demonstrating abilities in game design and teamwork in a creative environment."
+    skill: "React",
+    description: "Building dynamic user interfaces and custom web components."
   },
   {
     skill: "Git/GitHub",
-    description: "Proficient in using Git and GitHub for version control and collaboration in various software development projects."
-  },
-  {
-    skill: "RASA",
-    description: "Integrated RASA chatbot functionalities into applications, enhancing user interaction and automating responses."
-  },
-  {
-    skill: "HTML5/CSS",
-    description: "Crafted responsive web layouts and user interfaces with HTML5 and CSS, adhering to modern web standards and design principles."
+    description: "Version control, branching strategies, and collaboration in Agile environments."
   },
   {
     skill: "Firebase",
-    description: "Experienced in using Firebase for building scalable backend solutions and real-time data handling for web and mobile applications."
+    description: "Backend-as-a-Service for real-time databases and user management."
   },
   {
-    skill: "Object-Oriented Programming (OOP)",
-    description: "Applied OOP principles in various projects using languages like Java and Python to create well-structured and maintainable code."
+    skill: "Agile/SDLC",
+    description: "Full execution of Software Development Life Cycle, including sprint planning, backlog refinement, and CI/CD."
   },
   {
-    skill: "Data Visualization",
-    description: "Visualized complex data sets using Python libraries, delivering insights through graphs and charts for academic and project-based purposes."
+    skill: "Unity",
+    description: "Experience with game development engines and interactive environments."
+  },
+  {
+    skill: "Technical Writing",
+    description: "Creating detailed technical documentation, architectural guides, and user manuals."
   }
-  // Add more skills as needed
 ];
 
 const SkillModal = ({ skill, description, onClose }) => {
@@ -104,6 +91,7 @@ const SkillModal = ({ skill, description, onClose }) => {
     border: 'none',
     background: 'none',
     cursor: 'pointer',
+    fontSize: '1.2rem'
   };
 
   const handleOverlayClick = (e) => {
@@ -118,8 +106,8 @@ const SkillModal = ({ skill, description, onClose }) => {
         <button style={closeButtonStyle} onClick={onClose}>
           <FaTimes />
         </button>
-        <h2>{skill}</h2>
-        <p>{description}</p>
+        <h2 style={{ marginTop: 0, color: '#333' }}>{skill}</h2>
+        <p style={{ lineHeight: '1.6', color: '#555' }}>{description}</p>
       </div>
     </div>
   );
@@ -132,18 +120,21 @@ const Skills = () => {
     margin: '20px auto',
     maxWidth: '1024px',
     width: '80%',
+    textAlign: 'center', // Centers the pills
   };
 
   const skillCardStyle = {
     display: 'inline-block',
-    marginRight: '10px',
-    marginBottom: '10px',
+    margin: '10px',
     padding: '10px 20px',
     borderRadius: '999px',
     background: '#ffffff',
     cursor: 'pointer',
     boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    transition: 'box-shadow 0.2s ease',
+    transition: 'transform 0.2s ease, box-shadow 0.2s ease',
+    fontSize: '0.95rem',
+    fontWeight: '500',
+    color: '#333'
   };
 
   const handleSkillClick = (skillItem) => {
@@ -157,7 +148,19 @@ const Skills = () => {
   return (
     <div style={skillsContainerStyle}>
       {skillsData.map(skillItem => (
-        <div key={skillItem.skill} style={skillCardStyle} onClick={() => handleSkillClick(skillItem)}>
+        <div 
+          key={skillItem.skill} 
+          style={skillCardStyle} 
+          onClick={() => handleSkillClick(skillItem)}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.transform = 'translateY(-2px)';
+            e.currentTarget.style.boxShadow = '0 6px 12px rgba(0,0,0,0.15)';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.boxShadow = '0 4px 8px rgba(0,0,0,0.1)';
+          }}
+        >
           {skillItem.skill}
         </div>
       ))}

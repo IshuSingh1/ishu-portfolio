@@ -1,21 +1,37 @@
 import React from 'react';
-import eyLogo from './../images/ey.png'; // Import EY logo
-import uofscLogo from './../images/uofsc.png'; // Import UofSC logo
+import eyLogo from './../images/ey.png'; 
+import uofscLogo from './../images/uofsc.png'; 
+import pwcLogo from './../images/pwc.png'; // Make sure you have this image or comment it out
 
 const experiences = [
   {
-    company: 'Ernst & Young (EY)',
-    role: 'Technology Consultant',
-    dates: 'AUG 2022 - PRESENT',
+    company: 'PricewaterhouseCoopers (PwC)',
+    role: 'ServiceNow Consultant / Developer',
+    dates: 'AUGUST 2024 - PRESENT',
     location: 'Atlanta, GA',
-    logo: eyLogo,
+    logo: pwcLogo, 
     isCurrent: true,
     description: [
-      "Work & Responsibilities includes:",
+      "Lead a team of 10+ ServiceNow developers implementing Sales and Order Management solutions within a federally certified instance, aligning delivery with client goals and compliance standards.",
+      "Manage sprint planning, backlog refinement, kickoff meetings, and retrospectives to ensure agile best practices and consistent delivery velocity.",
+      "Architect and oversee the configuration of UI Policies, Business Rules, Client Scripts, Workflows, and REST integrations to support complex business processes.",
+      "Architected and deployed end-to-end ITSM processes across Incident, Change, Problem, Major Incident, and Knowledge Management modules, improving service delivery efficiency.",
+      "Create internal accelerators and reusable components to expedite ServiceNow solution delivery; develop internal tools and frameworks to enhance the maturity and efficiency of the ServiceNow practice."
+    ]
+  },
+  {
+    company: 'Ernst & Young (EY)',
+    role: 'ServiceNow Consultant / Developer',
+    dates: 'AUGUST 2022 - AUGUST 2024',
+    location: 'Atlanta, GA',
+    logo: eyLogo,
+    isCurrent: false,
+    // RESTORED: Detailed description from your original website
+    description: [
       "Actively involved in the development, configuration, and ongoing maintenance of client applications as a ServiceNow Developer, ensuring optimal performance and user satisfaction.",
       "Acting as a ServiceNow Functional Analyst, gathering client requirements, documenting integrations, catalog items, and configurations, thereby enhancing project efficiency and clarity.",
-      "Led the development of a custom Firewall Management application in ServiceNow, significantly enhancing service delivery and user experience. This involved creating scoped applications, access controls, workflows, email notifications, forms, and micro-configurations. Received high praise and recognition for exceptional work, with users providing overwhelmingly positive feedback on the application.",
-      "Playing a pivotal role in EY's business development initiatives, including maintaining the account pipeline and reporting crucial metrics to leadership, as well as providing key support in multiple client pursuits.",
+      "Led the development of a custom Firewall Management application in ServiceNow, significantly enhancing service delivery and user experience. This involved creating scoped applications, access controls, workflows, email notifications, forms, and micro-configurations.",
+      "Played a pivotal role in EY's business development initiatives, including maintaining the account pipeline and reporting crucial metrics to leadership, as well as providing key support in multiple client pursuits."
     ]
   },
   {
@@ -26,11 +42,9 @@ const experiences = [
     logo: uofscLogo,
     isCurrent: false,
     description: [
-      "Work performed included:",
       "Data Analysis and Visualization: Analyzed COVID and SUD Reddit/Twitter data (2019-2021) using Python, visualizing trends with Python libraries, and optimized API data extraction.",
       "3D Modeling and Chatbot Integration: Created an interactive 3D Rubik's Cube using Three.js and integrated a RASA chatbot in a web app for cube-solving education.",
-      "Mobile Application Enhancement: Enhanced QuitStart Android app with an embedded chatbot and utilized Firebase for user data management.",
-      "Web-Based React Project: Contributed to the development of a React project aimed at studying user focus in response to various ads and popups, providing valuable insights into the effects of digital advertising.",
+      "Mobile Application Enhancement: Enhanced QuitStart Android app with an embedded chatbot and utilized Firebase for user data management."
     ]
   },
 ];
@@ -51,6 +65,7 @@ const WorkExperience = () => {
   const experienceLogoStyle = {
     width: '100px',
     marginBottom: '20px',
+    objectFit: 'contain'
   };
 
   const experienceDetailsStyle = {
@@ -58,7 +73,7 @@ const WorkExperience = () => {
   };
 
   const listStyle = {
-    paddingLeft: '40px', // Increase left padding to indent the list items further
+    paddingLeft: '40px',
   };
 
   const currentIndicatorStyle = {
@@ -76,21 +91,23 @@ const WorkExperience = () => {
     <div>
       {experiences.map((exp, index) => (
         <div key={index} style={cardStyle}>
-          <img src={exp.logo} alt={`${exp.company} Logo`} style={experienceLogoStyle} />
+          {exp.logo ? (
+            <img src={exp.logo} alt={`${exp.company} Logo`} style={experienceLogoStyle} />
+          ) : (
+             <div style={{...experienceLogoStyle, fontWeight: 'bold', fontSize: '1.2em'}}>{exp.company}</div>
+          )}
+          
           <div style={experienceDetailsStyle}>
             <h3>{exp.company}</h3>
-            <p>{exp.role}</p>
-            <p>{exp.dates}</p>
-            <p>{exp.location}</p>
-            {exp.description.slice(0, 1).map((detail, detailIndex) => (
-              <p key={detailIndex}>{detail}</p>
-            ))}
+            <p style={{ fontWeight: 'bold' }}>{exp.role}</p>
+            <p style={{ fontStyle: 'italic', color: '#555' }}>{exp.dates} | {exp.location}</p>
+            
             <ul style={listStyle}>
-              {exp.description.slice(1).map((detail, detailIndex) => (
-                <li key={detailIndex}>{detail}</li>
+              {exp.description.map((detail, detailIndex) => (
+                <li key={detailIndex} style={{ marginBottom: '8px' }}>{detail}</li>
               ))}
             </ul>
-            {exp.isCurrent && <div style={currentIndicatorStyle}></div>}
+            {exp.isCurrent && <div style={currentIndicatorStyle} title="Current Role"></div>}
           </div>
         </div>
       ))}
