@@ -245,6 +245,9 @@ const HamburgerMenu = () => {
           <li className="nav-item">
             <a href="#achievements" className="nav-link" onClick={(e) => handleNavigation(e, 'achievements')}>Achievements</a>
           </li>
+          <li className="nav-item">
+            <a href="#contact" className="nav-link" onClick={(e) => handleNavigation(e, 'contact')}>Contact</a>
+          </li>
         </ul>
 
         {/* Featured Project Section */}
